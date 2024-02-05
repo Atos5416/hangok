@@ -7,14 +7,17 @@ button{
     font-weight: bold;
     color: #f00;
     cursor: pointer;
+    margin: 40px;
 }
 body{
     background-color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+
+    
 }
 
 img{
     width: 100px;
 }
+
+  

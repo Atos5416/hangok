@@ -9,12 +9,32 @@
 <body>
 
 
-    <img src="mikro.png" alt=""><button type="button" id="hang1" onclick="audio.play();">mikro</button></img>
-    <br>
-    <button type="button">Windows</button>
+    <div>
+        <audio id="mikro" src="hangok/mokro.mp3" autostart="false"></audio>
+        <img src="mikro.png" ><button onclick="mikro();">mikro</button></img>
+    </div>
+    
+    <div>
+        <audio id='windows' src="hangok/windows.mp3" autostart="false"></audio>
+        <img src="windows.png" alt=""><button id="windows" onclick="windows();"">Windows</button>
+    </div>
+    <div>
+        <audio id='nokia' src="hangok/nokia.mp3" autostart="false"></audio>
+        <img id='nokia'src="nokia.png" alt=""><button id="nokia" onclick="nokia();"">Nokia</button>
+    </div>
     <script>
-        const audio = new Audio();
-        audio.src ="./hangok/mokro.mp3";  
+        function mikro(){
+            var sound = document.getElementById('mikro')
+            sound.play();
+        }
+        function windows(){
+            var sound = document.getElementById('windows')
+            sound.play();
+        }
+        function nokia(){
+            var sound = document.getElementById('nokia')
+            sound.play();
+        }
     </script>
 </body>
 </html>
