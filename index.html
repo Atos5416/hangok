@@ -12,22 +12,22 @@
 
     <div>
         <audio id="mikro" src="hangok/mokro.mp3" autostart="false"></audio>
-        <img src="mikro.png" ><button onclick="mikro();">mikro</button></img>
+        <img src="mikro.png" ><button onclick="mikro();">mikro</button>
         
     </div>
-    <div id="mute">
-        
-    </div>
+    
     <div>
         <audio id='windows' src="hangok/windows_xp.mp3" autostart="false"></audio>
-        
         <img src="windows.png" alt=""><button id="windows" onclick="windows();"">Windows</button>
-        <button id="nemit" onclick="nemit()"> Mute</button>
     </div>
     <div>
         <audio id='nokia' src="hangok/nokia.mp3" autostart="false"></audio>
         <img id='nokia'src="nokia.png" alt=""><button id="nokia" onclick="nokia();"">Nokia</button>
     </div>
+
+    <button onclick="toggleMute();" id="muteBtn">Mute</button>
+
+    
     <script>
         function mikro(){
             var sound = document.getElementById('mikro')
@@ -41,8 +41,22 @@
             var sound = document.getElementById('nokia')
             sound.play();
         }
-        function nemit() {
-            document.querySelectorAll("audio").forEach((elem) => muteMe(elem));
+        function toggleMute() {
+            var allAudios = document.querySelectorAll('audio');
+            var muteButton = document.getElementById('muteBtn');
+            isMuted = !isMuted;
+
+            if (isMuted) {
+                allAudios.forEach(function(audio) {
+                    audio.muted = true;
+                });
+                muteButton.textContent = "Unmute";
+            } else {
+                allAudios.forEach(function(audio) {
+                    audio.muted = false;
+                });
+                muteButton.textContent = "Mute";
+            }
         }
     </script>
 </body>
