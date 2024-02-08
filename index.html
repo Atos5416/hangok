@@ -8,39 +8,42 @@
 </head>
 <body>
 
-    
-
     <div>
-        <audio id="mikro" src="hangok/mokro.mp3" autostart="false"></audio>
-        <img src="mikro.png" ><button onclick="mikro();">mikro</button>
-        
+        <audio id="mikro" src="hangok/mokro.mp3" autoplay="false"></audio>
+        <img src="mikro.png"><button onclick="mikro();">mikro</button>
     </div>
     
     <div>
-        <audio id='windows' src="hangok/windows_xp.mp3" autostart="false"></audio>
-        <img src="windows.png" alt=""><button id="windows" onclick="windows();"">Windows</button>
+        <audio id='windows' src="hangok/windows_xp.mp3" autoplay="false"></audio>
+        <img src="windows.png" alt=""><button id="windows" onclick="windows();">Windows</button>
     </div>
+    
     <div>
-        <audio id='nokia' src="hangok/nokia.mp3" autostart="false"></audio>
-        <img id='nokia'src="nokia.png" alt=""><button id="nokia" onclick="nokia();"">Nokia</button>
+        <audio id='nokia' src="hangok/nokia.mp3" autoplay="false"></audio>
+        <img id='nokiaImg' src="nokia.png" alt=""><button id="nokia" onclick="nokia();">Nokia</button>
     </div>
 
     <button onclick="toggleMute();" id="muteBtn">Mute</button>
 
     
     <script>
+        var isMuted = false;
+
         function mikro(){
-            var sound = document.getElementById('mikro')
+            var sound = document.getElementById('mikro');
             sound.play();
         }
+
         function windows(){
-            var sound = document.getElementById('windows')
+            var sound = document.getElementById('windows');
             sound.play();
         }
+
         function nokia(){
-            var sound = document.getElementById('nokia')
+            var sound = document.getElementById('nokia');
             sound.play();
         }
+
         function toggleMute() {
             var allAudios = document.querySelectorAll('audio');
             var muteButton = document.getElementById('muteBtn');
