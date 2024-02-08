@@ -8,15 +8,21 @@
 </head>
 <body>
 
+    
 
     <div>
         <audio id="mikro" src="hangok/mokro.mp3" autostart="false"></audio>
         <img src="mikro.png" ><button onclick="mikro();">mikro</button></img>
+        
     </div>
-    
+    <div id="mute">
+        
+    </div>
     <div>
         <audio id='windows' src="hangok/windows_xp.mp3" autostart="false"></audio>
+        
         <img src="windows.png" alt=""><button id="windows" onclick="windows();"">Windows</button>
+        <button id="nemit" onclick="nemit()"> Mute</button>
     </div>
     <div>
         <audio id='nokia' src="hangok/nokia.mp3" autostart="false"></audio>
@@ -34,6 +40,9 @@
         function nokia(){
             var sound = document.getElementById('nokia')
             sound.play();
+        }
+        function nemit() {
+            document.querySelectorAll("audio").forEach((elem) => muteMe(elem));
         }
     </script>
 </body>
